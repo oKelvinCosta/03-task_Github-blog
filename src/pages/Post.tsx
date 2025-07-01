@@ -1,79 +1,117 @@
-import Img from "../Img";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
 import { CardAction } from "../components/ui/card";
-import { CalendarClock, ChevronLeft, Github, MessageSquareMore, SquareArrowOutUpRight } from "lucide-react";
+import {
+  CalendarClock,
+  ChevronLeft,
+  Github,
+  MessageSquareMore,
+  SquareArrowOutUpRight,
+} from "lucide-react";
+import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { fetchIssueByNumber } from "@/lib/github";
+import { useState } from "react";
+import "github-markdown-css/github-markdown.css";
+import ReactMarkdown from "react-markdown";
+import rehypeHighlight from "rehype-highlight";
+import { format } from "date-fns";
 
-export default function Home() {
+export default function Post() {
+  const [issuePost, setIssuePost] = useState<any>(null);
+  const params = useParams<{ number: string }>();
+  const number = Number(params.number);
+  const [isLoading, setIsLoading] = useState(true);
+
+  async function loadIssueByNumber(number: number) {
+    try {
+      setIsLoading(true);
+      const issue = await fetchIssueByNumber(number);
+      setIssuePost(issue);
+    } catch (error) {
+      console.error("Erro ao carregar a issue:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    loadIssueByNumber(number);
+  }, [number]);
+
+  if (isLoading) {
+    return (
+      <div className="flex min-h-screen w-full items-center justify-center text-center">
+        <h1>Carregando...</h1>
+      </div>
+    );
+  }
+
   return (
     <>
-      <header>
-        <div className="flex items-center justify-center">
-          <Img src={`./imgs/core/placeholder.png`} className={``} />
-        </div>
-        <Card className="flex items-center">
-          <Img src={`./imgs/core/placeholder.png`} className={``} />
-          <div>
-            <div>
-              <a href="">
-                <ChevronLeft size={16} color="#3294f8" />
-                VOLTAR
-              </a>
+      <div className="container -mt-18">
+        <header>
+          <Card className="p-6">
+            <div className="flex items-center justify-between">
+              <Link to="/">
+                <Button
+                  variant="outline"
+                  className="text-primary flex items-center justify-center gap-2"
+                >
+                  <ChevronLeft size={16} color="#3294f8" />
+                  <span className="mt-[2px]">VOLTAR</span>
+                </Button>
+              </Link>
               <CardAction>
-                VER NO GITHUB <SquareArrowOutUpRight size={16} color="#3294f8" />
+                <a href={issuePost.html_url}>
+                  <Button
+                    variant="outline"
+                    className="text-primary flex items-center justify-center gap-2"
+                  >
+                    <span className="mt-[2px]">VER NO GITHUB</span>
+                    <SquareArrowOutUpRight size={16} color="#3294f8" />
+                  </Button>
+                </a>
               </CardAction>
             </div>
-            <CardHeader className="flex items-center justify-between">
-              <CardTitle>JavaScript data types and data structures</CardTitle>
+            <CardHeader className="flex items-center justify-between p-0">
+              <CardTitle>
+                <h1 className="!mb-0">{issuePost.title}</h1>
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p>
-                Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean
-                malesuada suscipit. Nunc, volutpat pulvinar vel mass.
-              </p>
+            <CardContent className="p-0">
               <div className="flex items-center gap-6">
-                <a href="https://github.com/cameronwll">
+                <a
+                  href={issuePost.user.html_url}
+                  className="flex items-center gap-2"
+                >
                   <Github size={16} color="#3a526b" />
-                  cameronwll
+                  {issuePost.user.login}
                 </a>
-                <a href="https://github.com/cameronwll">
+                <span className="flex items-center gap-2">
                   <CalendarClock size={16} color="#3a526b" />
-                  Rocketseat
-                </a>
-                <a href="https://github.com/cameronwll">
+                  {format(new Date(issuePost.created_at), "dd/MM/yyyy")}
+                </span>
+                <span className="flex items-center gap-2">
                   <MessageSquareMore size={16} color="#3a526b" />
-                  32 seguidores
-                </a>
+                  {issuePost.user.followers} seguidores
+                </span>
               </div>
             </CardContent>
-          </div>
-        </Card>
-      </header>
+          </Card>
+        </header>
 
-      <div className="flex gap-6">
-        <div className="flex items-center justify-between">
-          <h3>Publicações</h3>
-          <span>6 publicações</span>
+        {/* Content */}
+        <div className="markdown-body !mt-10 rounded-md border p-10">
+          <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+            {issuePost.body}
+          </ReactMarkdown>
         </div>
-        <div>FORM</div>
-      </div>
-
-      <div className="flex gap-6">
-        <Card className="flex items-center">
-          <Img src={`./imgs/core/placeholder.png`} className={``} />
-          <div>
-            <CardHeader className="flex items-center justify-between">
-              <CardTitle>JavaScript data types and data structures</CardTitle>
-              <span>Há 1 dia</span>
-            </CardHeader>
-            <CardContent>
-              <p>
-                Programming languages all have built-in data structures, but these often differ from one language to
-                another. This article attempts to list the built-in data structures available in JavaScript and what
-                properties they have.
-              </p>
-            </CardContent>
-          </div>
-        </Card>
       </div>
     </>
   );

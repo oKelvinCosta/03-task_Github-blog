@@ -86,8 +86,8 @@
   --card-foreground: hsl(209.19, 30.08%, 75.88%);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.6601 0.1733 252.6);
+  --primary-foreground: oklch(0.929 0.013 255.508);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: hsl(209.39, 29.7%, 32.35%);
@@ -151,9 +151,9 @@
 
 /* Typography ---------------------------*/
 :root {
-  --title-font-family: "Baloo 2", "Roboto", "Helvetica Neue", sans-serif;
+  --title-font-family: "Nunito", "Roboto", "Helvetica Neue", sans-serif;
   --title-font-weight: 700;
-  --text-font-family: "Roboto", "Helvetica Neue", sans-serif;
+  --text-font-family: "Nunito", "Roboto", "Helvetica Neue", sans-serif;
   --text-font-weight: 400;
 }
 
@@ -178,31 +178,30 @@ h3,
 h4,
 h5,
 h6 {
+  @apply text-slate-100;
   font-family: var(--title-font-family);
   font-weight: var(--title-font-weight);
   line-height: 130%;
 }
 h1 {
-  @apply text-5xl mb-8;
+  @apply text-2xl mb-8;
 }
 h2 {
-  @apply mb-8;
-  font-size: 2rem;
+  @apply text-xl mb-8;
 }
 h3 {
-  @apply text-2xl mb-8;
-  /* criar variavel customizada */
+  @apply text-lg mb-8;
 }
 h4 {
-  @apply text-xl mb-6;
+  @apply text-base mb-6;
   font-weight: 800;
 }
 h5 {
-  @apply text-lg mb-4;
+  @apply text-sm mb-4;
   font-weight: 800;
 }
 h6 {
-  @apply text-base mb-4;
+  @apply text-xs mb-4;
   font-weight: 800;
 }
 
@@ -218,16 +217,4 @@ p:first-of-type {
 }
 p:last-of-type {
   margin-bottom: 0;
-}
-
-.tag {
-  font-size: 10px;
-  font-weight: 600;
-}
-.roboto {
-  font-family: "Roboto", "Helvetica Neue", sans-serif;
-}
-
-a:hover {
-  @apply text-yellow-400;
 }
