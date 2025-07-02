@@ -152,44 +152,39 @@ export default function Home() {
                     Conteúdo!
                   </div>
                   <div className="relative mt-5">
-                    <div>
+                    <p>
                       Mussum Ipsum, cacilds vidis litro abertis.&nbsp; Suco de
                       cevadiss deixa as pessoas mais interessantis. Aenean
                       aliquam molestie leo, vitae iaculis nisl. Pellentesque
                       nec nulla ligula. Donec gravida turpis a vulputate
                       ultricies. Si num tem leite então bota uma pinga aí
                       cumpadi!
-                    </div>
-                    <div>
-                      <br />
-                    </div>
-                    <div>
+                    </p>
+
+                    <p>
                       Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non
                       tellus tristique interdum. Manduma pindureta quium dia
                       nois paga. Pra lá, depois divoltis porris, paradis.
                       Praesent vel viverra nisi. Mauris aliquet nunc non turpis
                       scelerisque, eget.
-                      <br />
-                      <br />
-                      <div>
-                        Mussum Ipsum, cacilds vidis litro abertis.&nbsp; Suco
-                        de cevadiss deixa as pessoas mais interessantis.
-                        Aenean aliquam molestie leo, vitae iaculis nisl.
-                        Pellentesque nec nulla ligula. Donec gravida turpis a
-                        vulputate ultricies. Si num tem leite então bota uma
-                        pinga aí cumpadi!
-                      </div>
-                      <div>
-                        <br />
-                      </div>
-                      <div>
-                        Vehicula non. Ut sed ex eros. Vivamus sit amet nibh
-                        non tellus tristique interdum. Manduma pindureta quium
-                        dia nois paga. Pra lá, depois divoltis porris,
-                        paradis. Praesent vel viverra nisi. Mauris aliquet
-                        nunc non turpis scelerisque, eget.
-                      </div>
-                    </div>
+                    </p>
+
+                    <p>
+                      Mussum Ipsum, cacilds vidis litro abertis.&nbsp; Suco
+                      de cevadiss deixa as pessoas mais interessantis.
+                      Aenean aliquam molestie leo, vitae iaculis nisl.
+                      Pellentesque nec nulla ligula. Donec gravida turpis a
+                      vulputate ultricies. Si num tem leite então bota uma
+                      pinga aí cumpadi!
+                    </p>
+
+                    <p>
+                      Vehicula non. Ut sed ex eros. Vivamus sit amet nibh
+                      non tellus tristique interdum. Manduma pindureta quium
+                      dia nois paga. Pra lá, depois divoltis porris,
+                      paradis. Praesent vel viverra nisi. Mauris aliquet
+                      nunc non turpis scelerisque, eget.
+                    </p>
                   </div>
                 </div>
               </div>
