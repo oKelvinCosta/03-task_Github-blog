@@ -98,7 +98,7 @@ export default function Home() {
               <CardContent className="p-0">
                 <p>{profile.bio}</p>
               </CardContent>
-              <CardFooter className="p-0">
+              <CardFooter className="p-0 ml-auto">
                 <div className="flex items-center gap-6">
                   <a
                     href={profile.html_url}
@@ -132,6 +132,102 @@ export default function Home() {
           <div>
             <SearchForm setIssues={setIssues} />
           </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="max-w-[1200px] mx-auto">
+          <section className="flex flex-col relative min-h-[100px] px-5 w-full max-w-[1200px] mx-auto">
+            <div className="flex flex-col relative mt-5">
+              <div className="gap-5 flex max-md:flex-col max-md:gap-0">
+                <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+                  <img
+                    loading="lazy"
+                    srcSet="https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a"
+                    className="aspect-[1.42] object-cover object-center w-full min-h-5 min-w-5 overflow-hidden flex-grow"
+                    alt="Content image"
+                  />
+                </div>
+                <div className="flex flex-col w-[67%] ml-5 max-md:ml-0 max-md:w-full">
+                  <div className="relative mt-5 text-[42px] font-bold text-[rgba(74,144,226,1)]">
+                    <h1>Conteúdo! Builder.io</h1>
+                  </div>
+                  <div className="relative mt-5">
+                    <p>
+                      Mussum Ipsum, cacilds vidis litro abertis.&nbsp; Suco de
+                      cevadiss deixa as pessoas mais interessantis. Aenean
+                      aliquam molestie leo, vitae iaculis nisl. Pellentesque
+                      nec nulla ligula. Donec gravida turpis a vulputate
+                      ultricies. Si num tem leite então bota uma pinga aí
+                      cumpadi!
+                    </p>
+
+                    <p>
+                      Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non
+                      tellus tristique interdum. Manduma pindureta quium dia
+                      nois paga. Pra lá, depois divoltis porris, paradis.
+                      Praesent vel viverra nisi. Mauris aliquet nunc non turpis
+                      scelerisque, eget.
+                    </p>
+
+                    <p>
+                      Mussum Ipsum, cacilds vidis litro abertis.&nbsp; Suco
+                      de cevadiss deixa as pessoas mais interessantis.
+                      Aenean aliquam molestie leo, vitae iaculis nisl.
+                      Pellentesque nec nulla ligula. Donec gravida turpis a
+                      vulputate ultricies. Si num tem leite então bota uma
+                      pinga aí cumpadi!
+                    </p>
+
+                    <p>
+                      Vehicula non. Ut sed ex eros. Vivamus sit amet nibh
+                      non tellus tristique interdum. Manduma pindureta quium
+                      dia nois paga. Pra lá, depois divoltis porris,
+                      paradis. Praesent vel viverra nisi. Mauris aliquet
+                      nunc non turpis scelerisque, eget.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col relative my-5">
+              <div className="gap-5 flex max-md:flex-col max-md:gap-0">
+                <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">
+                  <div className="leading-8 text-2xl font-bold text-[rgba(74,144,226,1)] mt-5">
+                    Seção Builder.io
+                  </div>
+                  <div className="relative mt-5">
+                    <p>
+                      <span style={{ fontSize: '16px' }}>
+                        Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non
+                        tellus tristique interdum. Manduma pindureta quium dia
+                        nois paga. Pra lá, depois divoltis porris, paradis.
+                        Praesent vel viverra nisi. Mauris aliquet nunc non
+                        turpis scelerisque, eget.
+                      </span>
+                    </p>
+                  </div>
+                  <div className="relative mt-5">
+                    <p>
+                      Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non
+                      tellus tristique interdum. Manduma pindureta quium dia
+                      nois paga. Pra lá, depois divoltis porris, paradis.
+                      Praesent vel viverra nisi. Mauris aliquet nunc non turpis
+                      scelerisque, eget.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col w-[33%] ml-5 max-md:ml-0 max-md:w-full">
+                  <img
+                    loading="lazy"
+                    srcSet="https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F72c80f114dc149019051b6852a9e3b7a"
+                    className="aspect-[1.42] object-cover object-center w-full mt-5 min-h-5 min-w-5 overflow-hidden"
+                    alt="Builder.io section image"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
 
         {/* Area de Cards */}
