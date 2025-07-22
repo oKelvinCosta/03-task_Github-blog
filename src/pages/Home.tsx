@@ -98,7 +98,7 @@ export default function Home() {
               <CardContent className="p-0">
                 <p>{profile.bio}</p>
               </CardContent>
-              <CardFooter className="p-0">
+              <CardFooter className="p-0 ml-auto">
                 <div className="flex items-center gap-6">
                   <a
                     href={profile.html_url}
@@ -149,7 +149,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col w-[67%] ml-5 max-md:ml-0 max-md:w-full">
                   <div className="relative mt-5 text-[42px] font-bold">
-                    Conteúdo!
+                    <p>Conteúdo! Builder.io</p>
                   </div>
                   <div className="relative mt-5">
                     <p>
