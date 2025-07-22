@@ -149,7 +149,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col w-[67%] ml-5 max-md:ml-0 max-md:w-full">
                   <div className="relative mt-5 text-[42px] font-bold">
-                    <p>Conteúdo! Builder.io</p>
+                    <h1>Conteúdo! Builder.io</h1>
                   </div>
                   <div className="relative mt-5">
                     <p>
