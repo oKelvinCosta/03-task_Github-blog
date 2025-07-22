@@ -136,7 +136,7 @@ export default function Home() {
 
         {/* Content Section */}
         <div className="max-w-[1200px] mx-auto">
-          <section className="flex flex-col relative min-h-[100px] px-5 pb-15 w-full max-w-[1200px] mx-auto">
+          <section className="flex flex-col relative min-h-[100px] px-5 w-full max-w-[1200px] mx-auto">
             <div className="flex flex-col relative mt-5">
               <div className="gap-5 flex max-md:flex-col max-md:gap-0">
                 <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
@@ -190,7 +190,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col relative my-5 mb-20">
+            <div className="flex flex-col relative my-5">
               <div className="gap-5 flex max-md:flex-col max-md:gap-0">
                 <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">
                   <div className="leading-8 text-2xl font-bold text-[rgba(74,144,226,1)] mt-5">
