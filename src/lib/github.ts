@@ -1,6 +1,7 @@
 import { apiAxios } from "./axios";
 
 // Load all issues when load first time and when searched
+// * Only works if you put a complete word as query
 export async function fetchIssues(query?: string) {
   const username = "oKelvinCosta";
   const repo = "03-task_Github-blog";
